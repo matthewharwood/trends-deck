@@ -529,10 +529,7 @@ angular.module('trendsDeckApp')
         ]
       }
     ];
-    $scope.deepRouteIdx = 0
-    $scope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
-      // $scope.$state = $state;
-       // $scope.$state.params.slug
-
+    
+    $scope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams)
     });
   });
