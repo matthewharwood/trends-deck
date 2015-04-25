@@ -1,30 +1,55 @@
-.thing-form {
-    margin: 20px 0;
+* { 
+  box-sizing: border-box; 
+  font-family: 'Source Sans Pro', sans-serif;
+  background-repeat: no-repeat;
+  position: relative;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-#banner {
-    border-bottom: none;
-    margin-top: -20px;
+html, body {
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    min-height: 100%;
+    font-size: 100%;
 }
 
-#banner h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+article, aside, details, figcaption, figure,
+footer, header, hgroup, nav, section, audio, canvas, video {
+    display: block;
+}
+input, textarea, button, select {
+    margin: 0;
+    font-size: 100%;
+    line-height: normal;
+    vertical-align: baseline;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+textarea {
+    overflow: auto;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
-.hero-unit {
+figure {
     position: relative;
-    padding: 30px 15px;
-    color: #F5F5F5;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #4393B9;
 }
-
-.footer {
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 70px;
-    border-top: 1px solid #E5E5E5;
+figure img, figure object, figure embed, figure video {
+    max-width: 100%;
+    display: block;
+}
+img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
 }

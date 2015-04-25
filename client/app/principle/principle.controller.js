@@ -474,8 +474,7 @@ angular.module('trendsDeckApp')
               },
               {
                 title: 'Lifestyle spaces',
-                desc: 'Comfortable and engaging store spaces build brand affinity and encourage customers to spend more time in-store. "Urban Outfitters Space Ninety 8" is a marketplace, record store, and a restaurant that was voted best NYC restaurant by Gawker. "LuluLemon" sportswear stores offer complimentary yoga classes. 
-                       "Tokyo’s Evisu Concept Store" showcases London graffiti artists, individual customization projects, a brand heritage gallery, and a bar.',
+                desc: 'Comfortable and engaging store spaces build brand affinity and encourage customers to spend more time in-store. "Urban Outfitters Space Ninety 8" is a marketplace, record store, and a restaurant that was voted best NYC restaurant by Gawker. "LuluLemon" sportswear stores offer complimentary yoga classes.  "Tokyo’s Evisu Concept Store" showcases London graffiti artists, individual customization projects, a brand heritage gallery, and a bar.',
                 link: 'http://gawker.com/the-best-restaurant-in-new-york-is-the-williamsburg-ur-1617681735'
               }
             ]
@@ -530,6 +529,7 @@ angular.module('trendsDeckApp')
       }
     ];
     
-    $scope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams)
+    $scope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
+      //use this if needed
     });
   });
