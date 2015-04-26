@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('trendsDeckApp').directive('visNetworks', function() {
+angular.module('trendsDeckApp').directive('visNetworks', function($timeout) {
     return {
         restrict: 'E',
         require: '^ngModel',
@@ -16,13 +16,19 @@ angular.module('trendsDeckApp').directive('visNetworks', function() {
 
             var onSelect = $scope.onSelect() || function(prop) {};
             network.on('select', function(properties) {
-                // console.log(this.getScale());
+                console.log(this.getScale());
                 var nodeId = parseInt(this.getSelection().nodes);
-                console.log(this.focusOnNode(nodeId, {scale: 3.5, animation: true, duration: 1000, easingFunction: 'linear'}));
+                console.log(this);
+                console.log(this.focusOnNode(nodeId, {scale: 3.5, animation: true}));
                 // this.focusOnNode(nodeId, [{scale: 3.5}, {animation: true }, {duration: 1000}, {easingFunction: 'linear'}])
                 onSelect(properties);
             });
-            // $element.bind('click', function(e){console.log(e.pageX, e.pageY)});
+            
+            var options = {scale:0.32, offset: {x: 451, y: 200}, animation: { duration: 2500, easingFunction: 'easeInOutQuart'}};
+            $timeout(function(){
+                network.moveTo(options)
+            },7000);
+
 
         }
 

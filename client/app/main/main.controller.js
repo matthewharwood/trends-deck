@@ -33,30 +33,31 @@ var app = angular.module('trendsDeckApp')
         },
         smoothCurves: false,
         physics: {
-          barnesHut: {
-              enabled: true,
-              gravitationalConstant: -2000,
-              centralGravity: 0.1,
-              springLength: 95,
-              springConstant: 0.04,
-              damping: 0.09
-          },
+          // barnesHut: {
+          //     enabled: true,
+          //     gravitationalConstant: -2000,
+          //     centralGravity: 0.1,
+          //     springLength: 95,
+          //     springConstant: 0.04,
+          //     damping: 0.09
+          // },
           repulsion: {
-              centralGravity: 0.1,
-              springLength: 50,
+              nodeDistance: 181,
+              centralGravity: 0.01,
+              springLength: 500,
               springConstant: 0.05,
-              nodeDistance: 100,
-              damping: 0.09
+              damping: 0.3
           },
-          hierarchicalRepulsion: {
-              centralGravity: 0.1,
-              springLength: 150,
-              springConstant: 0.005,
-              nodeDistance: 160,
-              damping: 0.09
-          }
+          // hierarchicalRepulsion: {
+          //     centralGravity: 0.1,
+          //     springLength: 150,
+          //     springConstant: 0.005,
+          //     nodeDistance: 160,
+          //     damping: 0.09
+          // }
   
         },
+        // physics: {barnesHut: {enabled: false}, repulsion: {nodeDistance: 181}},
         groups: {
           1: {
             shape: 'dot',
@@ -90,6 +91,7 @@ var app = angular.module('trendsDeckApp')
     console.log(Scenes.getSceneData().test);
     console.log($scope.nodesDetails = Scenes.getSceneData().data);
     console.log($scope.nodesDetailsTwo = Scenes.getTrendData());
+    console.log($scope.nodesDetailsThree = Scenes.getExampleData());
 
     // $scope.nodesDetails = [
     //     {id: 1, label: 'Retail', group: 1,  details:'lorem ipsum'},
@@ -103,21 +105,128 @@ var app = angular.module('trendsDeckApp')
     // console.log($scope.nodesDetails);
     // $scope.nodes.add($scope.nodesDetails);
 
-    $scope.edges.add([
-        {from: '1', to: '2'},
-        {from: '1', to: '3'},
-        {from: '1', to: '4'},
-        {from: '1', to: '5'},
-        {from: '2', to: '6'},
-        {from: '2', to: '7'},
-        {from: '2', to: '8'},
-    ]);
-    $timeout(function() {
-        $scope.nodes.add($scope.nodesDetailsTwo);
-        // $scope.nodes.add($scope.nodesDetailsTwo);
-    }, 1500);
     
+    $timeout(function(){
+    
+    $scope.edges.add([
+          //example 0
+          {from: '100', to: '1001'},
+          {from: '100', to: '1002'},
+          {from: '100', to: '1003'},
+          {from: '200', to: '2001'},
+          {from: '200', to: '2002'},
+          {from: '200', to: '2003'},
+          {from: '300', to: '3001'},
+          {from: '300', to: '3002'},
+          {from: '300', to: '3003'},
+          {from: '400', to: '4001'},
+          {from: '400', to: '4002'},
+          {from: '400', to: '4003'},
+          {from: '500', to: '5001'},
+          {from: '500', to: '5002'},
+          {from: '500', to: '5003'},
+          //example 1
+          {from: '11', to: '111'},
+          {from: '11', to: '112'},
+          {from: '11', to: '113'},
+          {from: '12', to: '121'},
+          {from: '12', to: '122'},
+          {from: '12', to: '123'},
+          {from: '13', to: '131'},
+          {from: '13', to: '132'},
+          {from: '13', to: '133'},
+          {from: '14', to: '141'},
+          {from: '14', to: '142'},
+          {from: '14', to: '143'},
+          {from: '15', to: '151'},
+          {from: '15', to: '152'},
+          {from: '15', to: '153'},
+          //example 2
+          {from: '20', to: '201'},
+          {from: '20', to: '202'},
+          {from: '20', to: '203'},
+          {from: '21', to: '211'},
+          {from: '21', to: '212'},
+          {from: '21', to: '213'},
+          {from: '22', to: '221'},
+          {from: '22', to: '222'},
+          {from: '22', to: '223'},
+          {from: '23', to: '231'},
+          {from: '23', to: '232'},
+          {from: '23', to: '233'},
+          {from: '24', to: '241'},
+          {from: '24', to: '242'},
+          {from: '24', to: '243'},
+          {from: '25', to: '251'},
+          {from: '25', to: '252'},
+          {from: '25', to: '253'},
+          //example 3
+          {from: '30', to: '301'},
+          {from: '30', to: '302'},
+          {from: '30', to: '303'},
+          {from: '31', to: '311'},
+          {from: '31', to: '312'},
+          {from: '31', to: '313'},
+          {from: '32', to: '321'},
+          {from: '32', to: '322'},
+          {from: '32', to: '323'},
+          {from: '33', to: '331'},
+          {from: '33', to: '332'},
+          {from: '33', to: '333'},
+          {from: '34', to: '341'},
+          {from: '34', to: '342'},
+          {from: '34', to: '343'},
+          {from: '35', to: '351'},
+          {from: '35', to: '352'},
+          {from: '35', to: '353'},
+          
+          
+        ]);
+      $scope.nodes.add($scope.nodesDetailsThree); 
+    },4500);
+    $timeout(function(){
+        $scope.edges.add([
+          //trends 0
+          {from: '0', to: '100'},
+          {from: '0', to: '200'},
+          {from: '0', to: '300'},
+          {from: '0', to: '400'},
+          {from: '0', to: '500'},
+          //trends 1
+          {from: '1', to: '10'},
+          {from: '1', to: '11'},
+          {from: '1', to: '12'},
+          {from: '1', to: '12'},
+          {from: '1', to: '12'},
+          {from: '1', to: '15'},
+          //trends 2
+          {from: '2', to: '20'},
+          {from: '2', to: '21'},
+          {from: '2', to: '22'},
+          {from: '2', to: '22'},
+          {from: '2', to: '22'},
+          {from: '2', to: '25'},
+          //trends 3
+          {from: '3', to: '30'},
+          {from: '3', to: '31'},
+          {from: '3', to: '32'},
+          {from: '3', to: '32'},
+          {from: '3', to: '32'},
+          {from: '3', to: '35'}
+        ]);
+        $scope.nodes.add($scope.nodesDetailsTwo);
+    },1000);
 
+    $timeout(function() {
+        $scope.edges.add([
+          {from: '0', to: '1'},
+          {from: '1', to: '2'},
+          {from: '2', to: '3'},
+          {from: '3', to: '4'},
+        ]);
+        $scope.nodes.add($scope.nodesDetails);
+        
+    }, 1500);
     //.*******                    ******* //
     // ******* visualization data *******.//
     //                .                   //

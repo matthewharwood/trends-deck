@@ -85,11 +85,16 @@ vis-networks {
 $base-black: rgba(0,0,0,0.99);
 $off-black: rgba(87,97,87,0.99);
 .base-header {
+    opacity:0;
     animation-name: easeInRight;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in;
-    
+
     animation-duration: 0.35s;
+    animation-timing-function: ease-in;
+    animation-delay: 8s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode:forwards;
+    
     hgroup {
         white-space:pre-line;
         max-width: 75%;
