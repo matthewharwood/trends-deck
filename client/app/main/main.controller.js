@@ -2,6 +2,12 @@
 
 angular.module('trendsDeckApp')
   .controller('MainCtrl', function ($scope, $http, socket) {
+
+    $scope.splash = {
+      title: 'Levi\'s Trends',
+      desc: 'Trends in Digital, Social, Mobile, E-Commerce, and China'
+    };
+    
     // $scope.awesomeThings = [];
 
     // $http.get('/api/things').success(function(awesomeThings) {

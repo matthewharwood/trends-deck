@@ -14,11 +14,11 @@ angular.module('trendsDeckApp')
     //   console.log(chr);
     //   return chr.user == 'barney';
     // });
-   
+  
     $scope.scenes = [
       {
         id: 0,
-        name: 'cutural',
+        name: 'Cultural Undercurrents',
         desc: 'Cultural trends affecting human behavior and expectation across all categories',
         more: ['As Levi’s looks for ways to protect and propel its global leadership role, what is our point of view toward trends in general?','When must we lead and when can we follow?','How can we leverage the integrity of Levi’s DNA to innovate in unexpected ways?','What will make us a modern cultural icon for those who once knew us as such, and more importantly, for the next generation, whose definition and value of originality is unique?'],
         trends: [

@@ -8,13 +8,14 @@
   padding: 0;
   border: 0;
 }
-
+$base-bg: rgba(223,223,223,0.99);
 html, body {
     height: 100%;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     min-height: 100%;
     font-size: 100%;
+    background-color: $base-bg;
 }
 
 article, aside, details, figcaption, figure,
@@ -53,3 +54,79 @@ img {
     border: 0;
     -ms-interpolation-mode: bicubic;
 }
+
+//.wallpaper
+
+
+
+//.wallpaper
+
+
+ //.animation
+@keyframes easeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(1.75rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+//.animation
+//.typography
+$base-black: rgba(0,0,0,0.99);
+$off-black: rgba(87,97,87,0.99);
+.base-header {
+    animation-name: easeInRight;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    
+    animation-duration: 0.35s;
+    h1 {
+        font-weight: 300;
+        color: $base-black;
+        font-size: 3.75rem;
+    }
+
+    h2 {
+        font-weight: 300;
+        color: $off-black;
+        font-size: 1.0625rem;
+    }
+    a.btn-primary {
+        text-transform: capitalize;
+        font-size: 0.875rem;
+        color: $base-black;
+        padding: 0.25rem 1rem;
+        border: 1px solid $base-black;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 2.25rem;
+
+    }
+}
+   
+//.typography
+
+//.helpers
+.fill {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+.base-frame {
+    padding: 4.5rem;
+}
+.parent-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.child-center {
+  position: absolute;
+  top: 50%;
+  // transform: translateY(-50%);
+}
+//.helpers
