@@ -94,10 +94,11 @@ $off-black: rgba(87,97,87,0.99);
     animation-iteration-count: 1;
     animation-direction: normal;
     animation-fill-mode:forwards;
-    z-index: 999;
+    
     hgroup {
         white-space:pre-line;
         max-width: 75%;
+        z-index: 999;
     }
     h1 {
         font-weight: 300;
