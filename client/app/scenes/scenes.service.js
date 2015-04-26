@@ -6,15 +6,27 @@ angular.module('trendsDeckApp')
     // ...
 
     var Scenes = {};
+    Scenes.test = [
+        {id: 1, label: 'Retail', group: 1,  details:'lorem ipsum'},
+        {id: 2, label: 'Cultural Undercurrents', details: 'Cultural Undercurrents', group: 1},
+        {id: 3, label: 'Principle 3' , group: 1},
+        {id: 4, label: 'Principle 4' , group: 1},
+        {id: 5, label: 'Principle 5' , group: 1},
+        {id: 6, label: 'Trend 6' , group: 1},
+        {id: 7, label: 'Trend 7' , group: 1},
+        {id: 8, label: 'Trend 8' , group: 1}
+      ];
     Scenes.data = [
       {
         id: 0,
+        group: 1,
         name: 'Cultural Undercurrents',
         desc: 'Cultural trends affecting human behavior and expectation across all categories',
         more: ['As Levi’s looks for ways to protect and propel its global leadership role, what is our point of view toward trends in general?','When must we lead and when can we follow?','How can we leverage the integrity of Levi’s DNA to innovate in unexpected ways?','What will make us a modern cultural icon for those who once knew us as such, and more importantly, for the next generation, whose definition and value of originality is unique?'],
         trends: [
           {
-            id: 1,
+            id: 100,
+            group: 1,
             name: 'New feminism: A more natural conversation',
             desc: 'As feminism’s message shifts from man-hating to girl-empowering, social media acts as a natural amplifier.',
             more: ['As a product that impacts how women feel, how can Levi’s naturally amplify the conversation?','How can Levi\'s naturally empower women?', 'Should Levi\'s emulate the natural, raw tone found on successful brands’ social feeds?'],
@@ -38,7 +50,8 @@ angular.module('trendsDeckApp')
 
           },
           {
-            id: 2,
+            id: 200,
+            group: 1,
             name: 'Gen Z: Nearly normal',
             desc: 'The next generation was born into a multicultural, digital world; the impact will be huge.',
             more: ['How can we begin translating our timeless, tangible product into a future built by connected kids?', 'Without losing the lifestyle brand and tangible product experience unique to Levi\’s?'],
@@ -62,7 +75,8 @@ angular.module('trendsDeckApp')
             ]
           },
           {
-            id: 3,
+            id: 300,
+            group: 1,
             name: 'Save our subcultures',
             desc: 'People used to earn their right to be part of a subculture — punk, goth, or cowboy. Now, it\’s just a quick outfit change.',
             more: ['As a brand born from subcultures, what role can we play to authentically honor and inspire the real thing', 'What is the modern way to embrace self-expression?', 'How might we become not just a champion of it, but a leader?'],
@@ -85,7 +99,8 @@ angular.module('trendsDeckApp')
             ]            
           },
           {
-            id: 4,
+            id: 400,
+            group: 1,
             name: 'Better way business',
             desc: 'CRM initiatives have evolved from paragraphs on About Us pages to business models making a real difference.',
             more: ['With a proven track record in doing the right thing, what should Levi’s do to continue its leadership in a modern context?', 'Now that sustainability is not a niche notion but a mass concern, what can Levi’s do to push the edges of the bell curve?'],
@@ -108,7 +123,8 @@ angular.module('trendsDeckApp')
             ]            
           },
           {
-            id: 5,
+            id: 500,
+            group: 1,
             name: 'Up close & personal',
             desc: 'Social media has given people access to the previously- private. Now, we expect access to celebrity family vacations and “frow” at fashion week.',
             more: ['What kind of access do people want from the Levi’s brand, products, and featured artists?', 'How can we be ahead of the curve and define what kind of access customers can/should expect of brands in general? Of clothing manufacturers?'],
@@ -133,12 +149,14 @@ angular.module('trendsDeckApp')
       },
       {
         id: 1,
+        group: 1,
         name: 'Omnichannel',
         desc: 'Collecting and leveraging shopper data to serve up increasingly seamless and personalized shopping experiences to everyone who wants in.',
         more: ['As we look to build the infrastructure for Levi’s integrated/omnichannel future, what are some big, iconic gestures we can put out there to prove we’re modern in our own authentic way?', 'Let’s build our omnichannel “moral compass” to guide our decisions and prove to the world that we are not just a jeans brand, we are a modern cultural icon.'],
         trends: [
           {
-            id: 1,
+            id: 11,
+            group: 1,
             name: 'Building while flying',
             desc: 'N/A',
             more: ['Knowing there is no such thing as perfect, where should/could Levi’s begin?', 'What data points already exist that we can connect?'],
@@ -161,7 +179,8 @@ angular.module('trendsDeckApp')
             ]
           },
           {
-            id: 2,
+            id: 12,
+            group: 1,
             name: 'Ecosystems, not tactics',
             desc: 'Harvesting data isn’t enough. Connecting it all around the customer defines the next generation of retail success.',
             more: ['What do we really want to learn about our customers?', 'How can we make Levi’s data-driven without sacrificing its DNA?'],
@@ -184,7 +203,8 @@ angular.module('trendsDeckApp')
             ]
           },
           {
-            id: 3,
+            id: 13,
+            group: 1,
             name: 'Mobile: Payments or platforms?',
             desc: 'Mobile wallets are "redefining" loyalty, and elevate its perks.',
             more: ['If mobile is the reason omnichannel exists in the first place, how can we use mobile to keep our customers in-store? And leverage mobile to make them feel more confident about their purchase?'],
@@ -207,7 +227,8 @@ angular.module('trendsDeckApp')
             ]
           },
           {
-            id: 4,
+            id: 14,
+            group: 1,
             name: 'Redefining value',
             desc: 'New models require consumers to share information in exchange for value.',
             more: ['How can Levi’s redefine value?', 'How can we give shoppers a more active role in their experience?',  'How can we translate shopper data into new innovations?'],
@@ -231,7 +252,8 @@ angular.module('trendsDeckApp')
             ]
           },
           {
-            id: 5,
+            id: 15,
+            group: 1,
             name: 'Pricing as brand expression',
             desc: 'Dynamic pricing isn’t just about matching the lowest price; it’s an opportunity to tailor for individual shoppers.',
             more: ['Looking at this as a communication channel, how might Levi’s cleverly communicate quality through dynamic pricing? Other points of difference?'],
@@ -252,12 +274,14 @@ angular.module('trendsDeckApp')
       },
       {
         id: 2,
+        group: 1,
         name: 'E-Commerce + POS',
         desc: 'Closing the gap between inspiration and gratification.',
         more: ['Knowing that consumers have increasingly high design and intelligence demands from brands, what can Levi’s do to stay ahead of those expectations in ecommerce?', 'Where is the one pain point (internally and for shoppers) that we can fix and build an alluring ecommerce structure around?'],
         trends: [
           {
-            id: 0,
+            id: 20,
+            group: 1,
             name: 'Shoppable everything, everywhere',
             desc: 'Understanding shopping behavior to eliminate slack between inspiration and gratification.',
             more: ['Where is the slack between inspiration and gratification for Levi’s shoppers?', 'How can we make the shopping experience as natural and authentic as possible?'],
@@ -280,7 +304,8 @@ angular.module('trendsDeckApp')
             ]
           },
           {
-            id: 1,
+            id: 21,
+            group: 1,
             name: 'Product threads',
             desc: 'Giving brands a more meaningful role in the stories we all weave, consumers and brands alike.',
             more: ['What social and editorial trends could Levi’s leapfrog to become a leader in product integration?', 'What can we leverage about denim’s natural integration in culture and outfits to make it authentic?'],
@@ -298,7 +323,8 @@ angular.module('trendsDeckApp')
             ]
           },
           {
-            id: 2,
+            id: 22,
+            group: 1,
             name: 'Ecomm goes local',
             desc: 'Cleverly converting ecommerce by playing into the cultural need for control.',
             more: ['In ecommerce and beyond, how can Levi’s localize the shopping experience?','Is this an opportunity to plus our knowledge of markets and connect to subcultures?'],
@@ -321,7 +347,8 @@ angular.module('trendsDeckApp')
             ]
           },
           {
-            id: 3,
+            id: 23,
+            group: 1,
             name: 'Native shopping',
             desc: 'Blending into where people already are stands to make shopping more natural than ever.',
             more: ['Knowing that current solutions are still clunky, how can Levi’s pave its own way into a more natural experience?', 'What data can we harvest about the nature of shopping for jeans? It might just be a matter of placing what we already know in a modern, digital context.'],
@@ -344,7 +371,8 @@ angular.module('trendsDeckApp')
             ]
           },
           {
-            id: 4,
+            id: 24,
+            group: 1,
             name: 'Online tailoring',
             desc: 'Tailoring not only clothes, but the entire online shopping experience around the customer is to take the guesswork out of online shopping.',
             more: ['How can Levi’s leverage this trend to better intersect staples with self- expression?', 'How can we help our shoppers understand the evergreen value of our products?'],
@@ -367,7 +395,8 @@ angular.module('trendsDeckApp')
             ]
           },
           {
-            id: 5,
+            id: 25,
+            group: 1,
             name: 'Try before buy',
             desc: 'Giving the consumer the feeling of complete control.',
             more: ['Knowing that “trying is believing,” how can Levi’s leverage this trend to express its authority in denim and fit?', 'These models aren’t without their logistical challenges, but what are we willing to give up in favor of our customers’ brand and product love?'],
@@ -387,14 +416,16 @@ angular.module('trendsDeckApp')
         ]
       },
       {
-        id: 4,
+        id: 3,
+        group: 1,
         name: 'In-Store Experience',
         desc: 'Creating a more entertaining and useful in-store experience for shoppers.',
         more: ['Retailers have only just scratched the surface of what’s possible in digitizing the in-store experience. As a leader, not a follower, should we develop an internal compass to assist us in decision-making along the way?', 
                'Is it better to start with innovative customer research to further support what we know about the customer journey? Or to take an iterative approach, developing and launching in-store beta tests in local markets?'],
         trends: [
           {
-            id: 0,
+            id: 30,
+            group: 1,
             name: 'Beacons for real',
             desc: 'If data is the new oil, in-store beacons are the retailer’s rig.',
             more: ['Even if Levi’s doesn’t want to jump into the price knife-fight, how can we partner with related apps to give us a leg up on the competition?', 'How can we leverage our regional knowledge to make this a success?'],
@@ -412,7 +443,8 @@ angular.module('trendsDeckApp')
             ]
           },
           {
-            id: 1,
+            id: 31,
+            group: 1,
             name: 'Rethinking display',
             desc: 'Display and merchandising will quickly transition from static to interactive.',
             more: ['How could Levi’s leverage its unique pain points to create a more entertaining, usable, and well-serviced space?', 'Can we creatively incorporate the tactile nature of denim in a purely digital experience?'],
@@ -430,7 +462,8 @@ angular.module('trendsDeckApp')
             ]
           },
           {
-            id: 2,
+            id: 32,
+            group: 1,
             name: 'Modern fit',
             desc: 'In-store tailoring has gone next level, with body-scanning. But is it working?',
             more: ['We already have Truefit and MeAlity tests in motion, but what is the Levi’s way to help people find the perfect fit? And how do we fold it into the service experience?', 'Do we care about retaining “the human touch”?'],
@@ -453,7 +486,8 @@ angular.module('trendsDeckApp')
             ]
           },
           {
-            id: 3,
+            id: 33,
+            group: 1,
             name: 'Immersive retail',
             desc: 'In-store experiences are key, as shoppers will only “make the trip” for good reason.',
             more: ['How can Levi’s capitalize on this trend to propel its position as cultural maven?','What experiences could we spark in denim, music, beyond?'],
@@ -471,7 +505,8 @@ angular.module('trendsDeckApp')
             ]
           },
           {
-            id: 4,
+            id: 34,
+            group: 1,
             name: 'Virtual fitting rooms',
             desc: 'While virtual fitting rooms mitigate pain points, retailers continue experimenting to make it feel as natural as possible.',
             more: ['Could Levi’s learn from this trend to solve some of its fit/ style issues, specifically with the women’s line? Both from an R&D and customer experience perspective?'],
@@ -494,7 +529,8 @@ angular.module('trendsDeckApp')
             ]
           },
           {
-            id: 5,
+            id: 35,
+            group: 1,
             name: 'Better payments',
             desc: 'The cash register is disappearing altogether. Three of the world’s most developed markets had "the highest spend of proximity mobile payments" on a per capita basis in 2014: Australia (US $22); the U.S. (US$16); and the U.K. (US $12).',
             more: ['When payment is no longer a chunk of the in-store experience, what will Levi’s put in its stead?', 'How can we assume a leadership position and still meet the demands of so many different mobile payment platforms?'],
@@ -520,10 +556,25 @@ angular.module('trendsDeckApp')
       }
     ];
 
+    var getAllData = function() {
+      return Scenes;
+    };
+
+    var getTrendData = function() {
+      var data = Scenes.data;
+      var newArr = '';
+      for(var i = 0; i < Scenes.data.length; i++){
+        newArr = data[i].trends;
+      }
+      return newArr;
+    };
     // Public API here
     return {
       getSceneData: function () {
-        return Scenes;
+        return getAllData();
+      },
+      getTrendData: function () {
+        return getTrendData();
       }
     };
   });

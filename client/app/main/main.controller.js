@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('trendsDeckApp')
-  .controller('MainCtrl', function ($scope, $http, socket, VisDataSet, $timeout) {
+var app = angular.module('trendsDeckApp')
+  .controller('MainCtrl', function ($scope, $http, socket, VisDataSet, $timeout, Scenes) {
    
     //.*******                    ******* //
     // ******* visualization data *******.//
@@ -86,17 +86,21 @@ angular.module('trendsDeckApp')
           //   bindToWindow: true
           // }
         }
+    console.log(Scenes.getTrendData())
+    console.log(Scenes.getSceneData().test);
+    console.log($scope.nodesDetails = Scenes.getSceneData().data);
+    console.log($scope.nodesDetailsTwo = Scenes.getTrendData());
 
-    $scope.nodesDetails = [
-        {id: 1, label: 'Retail', group: 1,  details:'lorem ipsum'},
-        {id: 2, label: 'Cultural Undercurrents', details: 'Cultural Undercurrents', group: 1},
-        {id: 3, label: 'Principle 3' , group: 1},
-        {id: 4, label: 'Principle 4' , group: 1},
-        {id: 5, label: 'Principle 5' , group: 1},
-        {id: 6, label: 'Trend 6' , group: 1},
-        {id: 7, label: 'Trend 7' , group: 1},
-        {id: 8, label: 'Trend 8' , group: 1}];
-
+    // $scope.nodesDetails = [
+    //     {id: 1, label: 'Retail', group: 1,  details:'lorem ipsum'},
+    //     {id: 2, label: 'Cultural Undercurrents', details: 'Cultural Undercurrents', group: 1},
+    //     {id: 3, label: 'Principle 3' , group: 1},
+    //     {id: 4, label: 'Principle 4' , group: 1},
+    //     {id: 5, label: 'Principle 5' , group: 1},
+    //     {id: 6, label: 'Trend 6' , group: 1},
+    //     {id: 7, label: 'Trend 7' , group: 1},
+    //     {id: 8, label: 'Trend 8' , group: 1}];
+    // console.log($scope.nodesDetails);
     // $scope.nodes.add($scope.nodesDetails);
 
     $scope.edges.add([
@@ -109,7 +113,8 @@ angular.module('trendsDeckApp')
         {from: '2', to: '8'},
     ]);
     $timeout(function() {
-        $scope.nodes.add($scope.nodesDetails);
+        $scope.nodes.add($scope.nodesDetailsTwo);
+        // $scope.nodes.add($scope.nodesDetailsTwo);
     }, 1500);
     
 
@@ -146,3 +151,41 @@ angular.module('trendsDeckApp')
     //   socket.unsyncUpdates('thing');
     // });
   });
+
+
+app.directive('contenteditable', function() {
+    return {
+        require: 'ngModel',
+        link: function(scope, elm, attrs, ctrl) {
+            // view -> model
+            elm.bind('blur', function() {
+                scope.$apply(function() {
+                    ctrl.$setViewValue(elm.html());
+                });
+            });
+
+            // model -> view
+            ctrl.render = function(value) {
+                elm.html(value);
+            };
+
+            // load init value from DOM
+            // ctrl.$setViewValue(elm.html());
+
+            elm.bind('keydown', function(event) {
+                console.log("keydown " + event.which);
+                var esc = event.which == 27,
+                    el = event.target;
+
+                if (esc) {
+                        console.log("esc");
+                        ctrl.$setViewValue(elm.html());
+                        el.blur();
+                        event.preventDefault();                        
+                    }
+                    
+            });
+            
+        }
+    };
+});
