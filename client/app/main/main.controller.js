@@ -1,14 +1,92 @@
 'use strict';
 
 angular.module('trendsDeckApp')
-  .controller('MainCtrl', function ($scope, $http, socket, VisDataSet) {
-    console.log(VisDataSet);
+  .controller('MainCtrl', function ($scope, $http, socket, VisDataSet, $timeout) {
+   
+    //.*******                    ******* //
+    // ******* visualization data *******.//
+    //                .                   //
+    
     $scope.nodes = new vis.DataSet();
     $scope.edges = new vis.DataSet();
     $scope.network_data = {
         nodes: $scope.nodes,
         edges: $scope.edges
     };
+    $scope.network_options = {
+        hierarchicalLayout: {
+          enabled:false,
+          levelSeparation: 150,
+          nodeSpacing: 100,
+          direction: "UD",
+          layout: "hubsize"
+        },
+        tooltip: {
+          delay: 300,
+          fontColor: "#575757",
+          fontSize: 14, // px
+          fontFace: "verdana",
+          color: {
+            border: "#666",
+            background: "#FFFFC6"
+          }
+        },
+        smoothCurves: false,
+        physics: {
+          barnesHut: {
+              enabled: true,
+              gravitationalConstant: -2000,
+              centralGravity: 0.1,
+              springLength: 95,
+              springConstant: 0.04,
+              damping: 0.09
+          },
+          repulsion: {
+              centralGravity: 0.1,
+              springLength: 50,
+              springConstant: 0.05,
+              nodeDistance: 100,
+              damping: 0.09
+          },
+          hierarchicalRepulsion: {
+              centralGravity: 0.1,
+              springLength: 150,
+              springConstant: 0.005,
+              nodeDistance: 160,
+              damping: 0.09
+          }
+  
+        },
+        groups: {
+          1: {
+            shape: 'dot',
+            fontColor: "#8c8c8c",
+            fontFace: 'Source Sans Pro',
+            fontSize: '12',
+              color: {
+                border: '#393939',
+                background: '#393939',
+                highlight: {
+                  border: '#393939',
+                  background: '#393939'
+                }
+              }
+            }
+          },
+          onAdd: function(data,callback) {
+            console.log('hey', data)
+          },
+          // navigation: true,
+          // keyboard: {
+          //   speed: {
+          //     x: 10,
+          //     y: 10,
+          //     zoom: 0.02
+          //   },
+          //   bindToWindow: true
+          // }
+        }
+
     $scope.nodesDetails = [
         {id: 1, label: 'Retail', group: 1,  details:'lorem ipsum'},
         {id: 2, label: 'Cultural Undercurrents', details: 'Cultural Undercurrents', group: 1},
@@ -30,7 +108,16 @@ angular.module('trendsDeckApp')
         {from: '2', to: '7'},
         {from: '2', to: '8'},
     ]);
-    $scope.nodes.add($scope.nodesDetails);
+    $timeout(function() {
+        $scope.nodes.add($scope.nodesDetails);
+    }, 1500);
+    
+
+    //.*******                    ******* //
+    // ******* visualization data *******.//
+    //                .                   //
+
+
     $scope.splash = {
       title: 'Levi\'s Trends',
       desc: 'Trends in Digital, Social, Mobile, E-Commerce, and China'
