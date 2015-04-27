@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('trendsDeckApp').directive('visNetworks', function($timeout) {
+angular.module('trendsDeckApp').directive('visNetworks', function($timeout,$state) {
     return {
         restrict: 'E',
         require: '^ngModel',
@@ -26,14 +26,23 @@ angular.module('trendsDeckApp').directive('visNetworks', function($timeout) {
             
             var options = {scale:0.32, offset: {x: 451, y: 200}, animation: { duration: 2500, easingFunction: 'easeInOutQuart'}};
             var optionsLogo = {scale:0.52, offset: {x: 350, y: 150}, animation: { duration: 2500, easingFunction: 'easeInOutQuart'}};
-            $timeout(function(){
+            if($state.current.name === 'main'){
+                $timeout(function(){
                 network.moveTo(optionsLogo);
                 
-            },3000);
-            $timeout(function(){
-                network.moveTo(options);
+                },3000);
+                $timeout(function(){
+                    network.moveTo(options);
 
-            },7000);
+                },7000);
+            } else if($state.current.name === 'principle'){
+                $timeout(function(){
+                network.moveTo({scale:2, offset: {x: 1200, y: 800}, animation: { duration: 2500, easingFunction: 'easeInOutQuart'}});
+                
+                },2000);
+                
+            }
+            
 
 
         }

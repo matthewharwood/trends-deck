@@ -92,6 +92,14 @@ img {
         
     }
 }
+.fadeOut {
+    animation-name: fadeInOutPop;
+    animation-duration: 1.25s;
+    animation-timing-function:  ease-in-out;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode:forwards;
+}
 //.animation
 //.wallpaper
 vis-networks {
@@ -100,13 +108,16 @@ vis-networks {
     width: 100%;
     height: 100%;
     opacity: 0.9;
-    animation-name: fadeOutHalf;
-    animation-duration: 1s;
-    animation-delay: 7s;
-    animation-timing-function:  linear;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode:forwards;
+    &.home-vis{
+        animation-name: fadeOutHalf;
+        animation-duration: 1s;
+        animation-delay: 7s;
+        animation-timing-function:  linear;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode:forwards;
+    }
+    
 }
 
 
@@ -149,20 +160,33 @@ $off-black: rgba(87,97,87,0.99);
 
     
    
-
-hgroup {
+.pre-line {
     white-space:pre-line;
     max-width: 75%;
     z-index: 999;
-    opacity:0;
-    animation-name: easeInRight;
-
-    animation-duration: 0.35s;
-    animation-timing-function: ease-in;
-    animation-delay: 8s;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode:forwards;
+}
+hgroup {
+    @extend .pre-line;
+    &.default-vis {
+        opacity:0;
+        animation-name: easeInRight;
+        animation-duration: 0.35s;
+        animation-timing-function: ease-in;
+        animation-delay: 2.5s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode:forwards;
+    }
+    &.home-vis{
+        opacity:0;
+        animation-name: easeInRight;
+        animation-duration: 0.35s;
+        animation-timing-function: ease-in;
+        animation-delay: 8s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode:forwards;
+    }    
 }
 h1 {
     font-weight: 300;
