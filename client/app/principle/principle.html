@@ -1,13 +1,6 @@
 
-<!-- 
-<hgroup class="child-center default-vis">
-  <h1>{{principle.title}}</h1>
-  <h2>{{principle.desc}}</h2>
-  
-</hgroup>
-<vis-networks ng-model="network_data" 
-              options="network_options" 
-              on-select="onNodeSelect" 
-              id="previewNetwork">
-</vis-networks>
-<div ui-view></div> -->
+<hgroup ui-view='info' class="child-center default-vis" ></hgroup>
+<div class="fill" ui-view='graph'></div>
+
+<!-- {{$state.is('principle')}} -->
+

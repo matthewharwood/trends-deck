@@ -1,10 +1,9 @@
 'use strict';
 
 angular.module('trendsDeckApp')
-  .controller('PrincipleCtrl', function ($scope, $state, $timeout,VisDataSet, Scenes) {
+  .controller('PrincipleDetailCtrl', function ($scope, $state, $timeout,VisDataSet, Scenes) {
     $scope.$state = $state;
-    // console.log($state);
-    
+    console.log('hey');
     $scope.nodes = new vis.DataSet();
     $scope.edges = new vis.DataSet();
     // var network = new vis.Network($('#previewNetwork2')[0], $scope.network_data, $scope.network_options) || {};
@@ -61,32 +60,19 @@ angular.module('trendsDeckApp')
           }
         }
       }
-    var network = {};      
-    if($state.current.name === 'principle'){
-
-      $timeout(function() {
-          network = new vis.Network($('#previewNetwork2')[0], $scope.network_data, $scope.network_options) || {};
-          $scope.edges.add([
-            {from: '0', to: '1'},
-            {from: '1', to: '2'},
-            {from: '2', to: '3'},
-            {from: '3', to: '4'},
-          ]);
-          $scope.nodes.add($scope.scenes);
-          
-      }, 1500);
-    } else if($state.current.name === 'principle.detail'){
-      $timeout(function() {
-        $scope.nodes.add($scope.scenes[$state.params.slug].trends);
-      }, 1500);
-    }
-
-    $scope.principle = {
-      title: 'Principle',
-      desc: 'Trends in Digital, Social, Mobile, E-Commerce, and China'
-    };
-    //
     
+   
+    $timeout(function() {
+      $scope.nodes.add($scope.scenes[$state.params.slug].trends);
+    }, 1500);
+
+
+    $scope.principleTwo = {
+      title: 'Principle2',
+      desc: 'Trends in2222 Digital, Social, Mobile, E-Commerce, and China'
+    };
+    console.log($scope.principleTwo);
+    var network = new vis.Network($('#previewNetwork2')[0], $scope.network_data, $scope.network_options) || {};
 
     $timeout(function(){
         network.moveTo({scale:2, offset: {x: 1200, y: 800}, animation: { duration: 2500, easingFunction: 'easeInOutQuart'}});
