@@ -162,7 +162,7 @@ $off-black: rgba(87,97,87,0.99);
    
 .pre-line {
     white-space:pre-line;
-    max-width: 75%;
+    max-width: 50%;
     z-index: 999;
 }
 
@@ -195,13 +195,14 @@ h1 {
     font-size: 3.75rem;
     display: inline;
     z-index: 100;
+    white-space: pre-line;
 }
 
 h2 {
     font-weight: 300;
     color: $off-black;
     font-size: 1.0625rem;
-    display: inline;
+    width: 75%;
     z-index: 100;
 }
 

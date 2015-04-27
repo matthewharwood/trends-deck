@@ -61,21 +61,51 @@ angular.module('trendsDeckApp')
         }
       }
     
-   
+    var network = {};
     $timeout(function() {
+      network = new vis.Network($('#previewNetwork2')[0], $scope.network_data, $scope.network_options) || {};
       $scope.nodes.add($scope.scenes[$state.params.slug].trends);
+      $scope.edges.add([
+          //trends 0
+          {from: '100', to: '200'},
+          {from: '200', to: '300'},
+          {from: '300', to: '400'},
+          {from: '400', to: '500'},
+          
+          //trends 1
+          {from: '10', to: '11'},
+          {from: '11', to: '12'},
+          {from: '12', to: '13'},
+          {from: '13', to: '14'},
+          {from: '14', to: '15'},
+          
+          //trends 2
+          {from:  '20', to: '21'},
+          {from:  '21', to: '22'},
+          {from:  '22', to: '23'},
+          {from:  '23', to: '24'},
+          {from:  '24', to: '25'},
+          {from:  '25', to: '26'},
+
+          //trends 3
+          {from: '30', to: '31'},
+          {from: '31', to: '32'},
+          {from: '32', to: '33'},
+          {from: '33', to: '34'},
+          {from: '34', to: '35'},
+          
+        ]);
     }, 1500);
 
-
-    $scope.principleTwo = {
-      title: 'Principle2',
-      desc: 'Trends in2222 Digital, Social, Mobile, E-Commerce, and China'
+    $scope.principle = {
+      title: $scope.scenes[$state.params.slug].label,
+      desc: $scope.scenes[$state.params.slug].desc
     };
-    console.log($scope.principleTwo);
-    var network = new vis.Network($('#previewNetwork2')[0], $scope.network_data, $scope.network_options) || {};
+  
+    
 
     $timeout(function(){
-        network.moveTo({scale:2, offset: {x: 1200, y: 800}, animation: { duration: 2500, easingFunction: 'easeInOutQuart'}});
+        network.moveTo({scale:1, offset: {x: ((window.innerWidth/2)+window.innerWidth/4), y: ((window.innerHeight/2)+window.innerHeight/10)}, animation: { duration: 2500, easingFunction: 'easeInOutQuart'}});
         // var onSelect = $scope.onNodeSelect || function(prop) {};
         network.on('select', function(properties) {
             var nodeId = parseInt(this.getSelection().nodes);

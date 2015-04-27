@@ -75,21 +75,8 @@ angular.module('trendsDeckApp')
           $scope.nodes.add($scope.scenes);
           
       }, 1500);
-    } else if($state.current.name === 'principle.detail'){
-      $timeout(function() {
-        $scope.nodes.add($scope.scenes[$state.params.slug].trends);
-      }, 1500);
-    }
-
-    $scope.principle = {
-      title: 'Principle',
-      desc: 'Trends in Digital, Social, Mobile, E-Commerce, and China'
-    };
-    //
-    
-
-    $timeout(function(){
-        network.moveTo({scale:2, offset: {x: 1200, y: 800}, animation: { duration: 2500, easingFunction: 'easeInOutQuart'}});
+      $timeout(function(){
+        network.moveTo({scale:1, offset: {x: ((window.innerWidth/2)+window.innerWidth/4), y: ((window.innerHeight/2)+window.innerHeight/10)}, animation: { duration: 2500, easingFunction: 'easeInOutQuart'}});
         // var onSelect = $scope.onNodeSelect || function(prop) {};
         network.on('select', function(properties) {
             var nodeId = parseInt(this.getSelection().nodes);
@@ -104,7 +91,21 @@ angular.module('trendsDeckApp')
             
             console.log(nodeId, properties);
         });
-    },2000);
+      },2000);
+    } else if($state.current.name === 'principle.detail'){
+      $timeout(function() {
+        $scope.nodes.add($scope.scenes[$state.params.slug].trends);
+      }, 1500);
+    }
+
+    $scope.principle = {
+      title: 'Principle',
+      desc: 'Trends in Digital, Social, Mobile, E-Commerce, and China'
+    };
+    //
+    
+
+    
     
   
   });
