@@ -1,6 +1,6 @@
 
 <div ng-repeat="(key, value) in scenes">
-  <a ui-sref="principle.detail({ slug: value.id })">{{value.name}}</a>
+  <a ui-sref="principle.detail({ slug: value.id })">{{value.label}}</a>
 </div>
 <div><a ui-sref="principle.detail.more">Read More</a></div>
 <div ui-view></div>

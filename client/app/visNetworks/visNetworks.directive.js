@@ -25,8 +25,14 @@ angular.module('trendsDeckApp').directive('visNetworks', function($timeout) {
             });
             
             var options = {scale:0.32, offset: {x: 451, y: 200}, animation: { duration: 2500, easingFunction: 'easeInOutQuart'}};
+            var optionsLogo = {scale:0.52, offset: {x: 350, y: 150}, animation: { duration: 2500, easingFunction: 'easeInOutQuart'}};
             $timeout(function(){
-                network.moveTo(options)
+                network.moveTo(optionsLogo);
+                
+            },3000);
+            $timeout(function(){
+                network.moveTo(options);
+
             },7000);
 
 
