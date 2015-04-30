@@ -47,7 +47,7 @@ figure {
     position: relative;
 }
 figure img, figure object, figure embed, figure video {
-    max-width: 100%;
+    width: 100%;
     display: block;
 }
 img {
@@ -238,5 +238,14 @@ a.btn-primary {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+.pointerEvent {
+    pointer-events: none !important;
+    overflow: hidden;
+    touch-action: none;
+    top:-100%;
+}
+.showMore {
+    top: -100%;
 }
 //.helpers

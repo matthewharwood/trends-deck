@@ -47,9 +47,10 @@ angular.module('trendsDeckApp')
       groups: {
         1: {
           shape: 'dot',
-          fontColor: "#8c8c8c",
+          fontColor: "#f7f7f7",
           fontFace: 'Source Sans Pro',
           fontSize: '12',
+          fontFill: '#393939',
             color: {
               border: '#393939',
               background: '#393939',

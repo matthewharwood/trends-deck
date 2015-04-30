@@ -3,7 +3,6 @@
 angular.module('trendsDeckApp')
   .controller('PrincipleDetailCtrl', function ($scope, $state, $timeout,VisDataSet, Scenes) {
     $scope.$state = $state;
-    console.log('hey');
     $scope.nodes = new vis.DataSet();
     $scope.edges = new vis.DataSet();
     // var network = new vis.Network($('#previewNetwork2')[0], $scope.network_data, $scope.network_options) || {};
@@ -46,9 +45,10 @@ angular.module('trendsDeckApp')
       groups: {
         1: {
           shape: 'dot',
-          fontColor: "#8c8c8c",
+          fontColor: "#f7f7f7",
           fontFace: 'Source Sans Pro',
           fontSize: '12',
+          fontFill: '#393939',
             color: {
               border: '#393939',
               background: '#393939',
@@ -108,11 +108,14 @@ angular.module('trendsDeckApp')
         network.moveTo({scale:1, offset: {x: ((window.innerWidth/2)+window.innerWidth/4), y: ((window.innerHeight/2)+window.innerHeight/10)}, animation: { duration: 2500, easingFunction: 'easeInOutQuart'}});
         // var onSelect = $scope.onNodeSelect || function(prop) {};
         network.on('select', function(properties) {
+          
             var nodeId = parseInt(this.getSelection().nodes);
             if(nodeId >= 0){
               if($state.current.name === 'principle'){
                 $state.go('principle.detail',{slug: nodeId})
                 
+              }else if($state.current.name ==="principle.detail") {
+                $state.go('principle.detail.trend',{trendSlug: nodeId})
               }
               
             }

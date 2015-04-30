@@ -186,7 +186,7 @@ angular.module('trendsDeckApp')
         more: ['As we look to build the infrastructure for Levi’s integrated/omnichannel future, what are some big, iconic gestures we can put out there to prove we’re modern in our own authentic way?', 'Let’s build our omnichannel “moral compass” to guide our decisions and prove to the world that we are not just a jeans brand, we are a modern cultural icon.'],
         trends: [
           {
-            id: 11,
+            id: 10,
             group: 1,
             label: 'Building while flying',
             desc: 'N/A',
@@ -194,21 +194,21 @@ angular.module('trendsDeckApp')
             examples: [
               {
                 group: 1,
-                id: 111,
+                id: 101,
                 label: 'Just getting started',
                 desc: 'Forrester found that that only 6% of US/EU retailers reported “no significant barriers” to becoming an integrated omni-channel company. Barriers include internal technology challenges, organizational silos, and poor operational execution.',
                 link: 'http://www.accenture.com/SiteCollectionDocuments/Accenture-Customer-Desires-VS-Retailer-Capabilities.pdf',
               },
               {
                 group: 1,
-                id: 112,
+                id: 102,
                 label: 'N/A',
                 desc: 'Once just a shopping mall conglomerate, Westfield Labs is a global digital lab focused on innovating the retail ecosystem.',
                 link: 'http://www.westfieldlabs.com',
               },
               {
                 group: 1,
-                id: 113,
+                id: 103,
                 label: 'N/A',
                 desc: 'Sephora’s Innovation Lab is developing and testing shopping technologies in hopes of defining the future of omnichannel. Meanwhile Kate Spade "Saturday’s" has been iterating since 2013.',
                 link: 'http://www.cosmeticsdesign.com/Business-Financial/Sephora-effect-beauty-retailer-changing-the-game-in-the-US',
@@ -216,7 +216,7 @@ angular.module('trendsDeckApp')
             ]
           },
           {
-            id: 12,
+            id: 11,
             group: 1,
             label: 'Ecosystems, not tactics',
             desc: 'Harvesting data isn’t enough. Connecting it all around the customer defines the next generation of retail success.',
@@ -224,21 +224,21 @@ angular.module('trendsDeckApp')
             examples: [
               {
                 group: 1,
-                id: 121,
+                id: 111,
                 label: 'Contextual information',
                 desc: 'Ikea uses beacon data to enhance the in-store experience with product storytelling, way-finding, and easy payment and delivery systems.',
                 link: 'http://www.psfk.com/2014/11/importance-storytelling-driving-contextual-relevant-store-experiences-psfk-future-retail-nyc.html',
               },
               {
                 group: 1,
-                id: 122,
+                id: 112,
                 label: 'Know your loyalists',
                 desc: 'Swan Centre’s beacon-enabled app gives customers loyalty points upon entering; centre tracks shopping behavior.',
                 link: 'http://internetretailing.net/2014/03/hampshire-shopping-centre-becomes-first-in-uk-to-use-beacons-to-deliver-targeted-promos-to-shoppers/',
               },
               {
                 group: 1,
-                id: 123,
+                id: 113,
                 label: 'Customer service reimagined',
                 desc: 'Swindon’s customers scan barcodes which serves up info, alerting sales associates to the activity and informs their approach.',
                 link: 'http://blog.mobstac.com/2015/03/beacons-and-big-data-the-new-power-couple-in-retail/',
@@ -246,7 +246,7 @@ angular.module('trendsDeckApp')
             ]
           },
           {
-            id: 13,
+            id: 12,
             group: 1,
             label: 'Mobile: Payments or platforms?',
             desc: 'Mobile wallets are "redefining" loyalty, and elevate its perks.',
@@ -254,21 +254,21 @@ angular.module('trendsDeckApp')
             examples: [
               {
                 group: 1,
-                id: 131,
+                id: 121,
                 label: 'Consolidated payments',
                 desc: 'Retailers are clamoring to get a piece of WeChat’s m-commerce. 2 million people used it to pay for taxi rides in just one day in February.',
                 link: 'http://www.igt.in/blog/the-wechat-m-commerce-travel-opportunity-or-flight-of-fancy/'
               },
               {
                 group: 1,
-                id: 132,
+                id: 122,
                 label: 'Individually branded mobile loyalty programs',
                 desc: 'Kohl’s is going above and beyond couponing, resulting in customers with the app making two extra trips to the store and spending an incremental $80 per year.',
                 link: 'http://blogs.wsj.com/cio/2015/01/26/the-next-step-for-the-mobile-wallet-loyalty-programs/'
               },
               {
                 group: 1,
-                id: 133,
+                id: 123,
                 label: 'Aggregate mobile loyalty programs',
                 desc: 'Starbucks is toying with the dream to put all loyalty programs and points under "one roof" with the goal of total consumer control and efficiency, while "new companies like Dealyze" act as customizable apps for B2B.',
                 link: 'http://blogs.wsj.com/cio/2015/01/23/starbucks-coo-hire-reflects-grande-tech-goals/'
@@ -276,7 +276,7 @@ angular.module('trendsDeckApp')
             ]
           },
           {
-            id: 14,
+            id: 13,
             group: 1,
             label: 'Redefining value',
             desc: 'New models require consumers to share information in exchange for value.',
@@ -284,21 +284,21 @@ angular.module('trendsDeckApp')
             examples: [
               {
                 group: 1,
-                id: 141,
+                id: 131,
                 label: 'Curated subscriptions',
                 desc: 'Stitch Fix sends you its stylist-approved products based on body type and provided style preferences.',
                 link: 'http://www.fastcompany.com/3025642/getting-their-fix'
               },
               {
                 group: 1,
-                id: 142,
+                id: 132,
                 label: 'Customer profiling',
                 desc: 'Sephora’s VIB program uses customer data to file individuals’ skin type, tone, even preferred scents, to serve up an increasingly personalized in-store experience every single time.',
                 link: 'http://www.fastcompany.com/3043166/most-creative-people/first-look-inside-sephoras-new-innovation-lab'
               },
               {
                 group: 1,
-                id: 143,
+                id: 133,
                 label: 'Personal showrooms',
                 desc: 'Users create online personal profiles where they receive personalized product recommendations based on their size and favorite labels.',
                 link: 'N/A'
@@ -307,7 +307,7 @@ angular.module('trendsDeckApp')
             ]
           },
           {
-            id: 15,
+            id: 14,
             group: 1,
             label: 'Pricing as brand expression',
             desc: 'Dynamic pricing isn’t just about matching the lowest price; it’s an opportunity to tailor for individual shoppers.',
@@ -315,14 +315,14 @@ angular.module('trendsDeckApp')
             examples: [
               {
                 group: 1,
-                id: 151,
+                id: 141,
                 label: 'N/A',
                 desc: '"IDC retail insights" predict that by the end of 2016, product intelligence will inform 90% of pricing decisions made by the top 10 e-commerce retailers. Currently, 42% of U.S. consumers think retailers are offering different prices online and offline',
                 link: 'TBD- "IDC retail insights" link may be the title link.'
               },
               {
                 group: 1,
-                id: 152,
+                id: 142,
                 label: 'So far, no best practices',
                 desc: 'The monster model "Amazon" changes its pricing every 10 minutes on average. Whereas high-end models, like Intermix or Neiman Marcus, might not give hard discounts but a gift card to come back.',
                 link: ''

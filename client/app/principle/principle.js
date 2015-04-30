@@ -40,8 +40,12 @@ angular.module('trendsDeckApp')
       })
       .state('principle.detail.trend', {
         url: '/{trendSlug}',
-        templateUrl: 'app/principle/principle.detail.html',
-        controller: 'PrincipleCtrl'
+        views: {
+          'more@': {
+            controller: 'PrincipleDetailTrendCtrl',
+            templateUrl: 'app/principle/principle.detail.trend.html',
+          }
+        }
       })
       .state('principle.detail.trend.more', {
         url: '/more'        
