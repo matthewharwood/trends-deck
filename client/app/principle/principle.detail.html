@@ -1,9 +1,4 @@
-<ul>
-  <li ng-repeat="trend in scenes[$state.params.slug].trends">
-    <a ui-sref="principle.detail.trend({ trendSlug: trend.id })">{{trend.name}}</a>
-  </li>
-</ul>
-
-
-<div><a ui-sref="principle.detail.trend.more">trend More</a></div>
+<h1>{{principle.title}}</h1>
+<h2>{{principle.desc}}</h2>
+  <!-- <a ui-sref="principle.detail.more({slug: $state.params.slug})" class="btn-primary">Read More</a> -->
 

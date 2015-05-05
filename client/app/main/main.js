@@ -6,6 +6,9 @@ angular.module('trendsDeckApp')
       .state('main', {
         url: '/',
         templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        onExit: function(){
+          console.log('heyhe');
+        }
       });
   });

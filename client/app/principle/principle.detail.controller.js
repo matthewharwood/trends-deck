@@ -1,10 +1,8 @@
 'use strict';
 
 angular.module('trendsDeckApp')
-  .controller('PrincipleCtrl', function ($scope, $state, $timeout,VisDataSet, Scenes) {
+  .controller('PrincipleDetailCtrl', function ($scope, $state, $timeout,VisDataSet, Scenes) {
     $scope.$state = $state;
-    // console.log($state);
-    
     $scope.nodes = new vis.DataSet();
     $scope.edges = new vis.DataSet();
     // var network = new vis.Network($('#previewNetwork2')[0], $scope.network_data, $scope.network_options) || {};
@@ -62,29 +60,62 @@ angular.module('trendsDeckApp')
           }
         }
       }
-    var network = {};      
-    if($state.current.name === 'principle'){
-
-      $timeout(function() {
-          network = new vis.Network($('#previewNetwork2')[0], $scope.network_data, $scope.network_options) || {};
-          $scope.edges.add([
-            {from: '0', to: '1'},
-            {from: '1', to: '2'},
-            {from: '2', to: '3'},
-            {from: '3', to: '4'},
-          ]);
-          $scope.nodes.add($scope.scenes);
+    
+    var network = {};
+    $timeout(function() {
+      network = new vis.Network($('#previewNetwork2')[0], $scope.network_data, $scope.network_options) || {};
+      $scope.nodes.add($scope.scenes[$state.params.slug].trends);
+      $scope.edges.add([
+          //trends 0
+          {from: '100', to: '200'},
+          {from: '200', to: '300'},
+          {from: '300', to: '400'},
+          {from: '400', to: '500'},
           
-      }, 1500);
-      $timeout(function(){
+          //trends 1
+          {from: '10', to: '11'},
+          {from: '11', to: '12'},
+          {from: '12', to: '13'},
+          {from: '13', to: '14'},
+          {from: '14', to: '15'},
+          
+          //trends 2
+          {from:  '20', to: '21'},
+          {from:  '21', to: '22'},
+          {from:  '22', to: '23'},
+          {from:  '23', to: '24'},
+          {from:  '24', to: '25'},
+          {from:  '25', to: '26'},
+
+          //trends 3
+          {from: '30', to: '31'},
+          {from: '31', to: '32'},
+          {from: '32', to: '33'},
+          {from: '33', to: '34'},
+          {from: '34', to: '35'},
+          
+        ]);
+    }, 1500);
+
+    $scope.principle = {
+      title: $scope.scenes[$state.params.slug].label,
+      desc: $scope.scenes[$state.params.slug].desc
+    };
+  
+    
+
+    $timeout(function(){
         network.moveTo({scale:1, offset: {x: ((window.innerWidth/2)+window.innerWidth/4), y: ((window.innerHeight/2)+window.innerHeight/10)}, animation: { duration: 2500, easingFunction: 'easeInOutQuart'}});
         // var onSelect = $scope.onNodeSelect || function(prop) {};
         network.on('select', function(properties) {
+          
             var nodeId = parseInt(this.getSelection().nodes);
             if(nodeId >= 0){
               if($state.current.name === 'principle'){
                 $state.go('principle.detail',{slug: nodeId})
                 
+              }else if($state.current.name ==="principle.detail") {
+                $state.go('principle.detail.trend',{trendSlug: nodeId})
               }
               
             }
@@ -92,21 +123,7 @@ angular.module('trendsDeckApp')
             
             console.log(nodeId, properties);
         });
-      },2000);
-    } else if($state.current.name === 'principle.detail'){
-      $timeout(function() {
-        $scope.nodes.add($scope.scenes[$state.params.slug].trends);
-      }, 1500);
-    }
-
-    $scope.principle = {
-      title: 'Principle',
-      desc: 'Trends in Digital, Social, Mobile, E-Commerce, and China'
-    };
-    //
-    
-
-    
+    },2000);
     
   
   });

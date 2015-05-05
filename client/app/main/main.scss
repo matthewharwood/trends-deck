@@ -1,30 +1,251 @@
-.thing-form {
-    margin: 20px 0;
+* { 
+  box-sizing: border-box; 
+  font-family: 'Source Sans Pro', sans-serif;
+  background-repeat: no-repeat;
+  position: relative;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+$base-bg: rgba(223,223,223,0.99);
+html, body {
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    min-height: 100%;
+    font-size: 100%;
+    background-color: $base-bg;
 }
 
-#banner {
-    border-bottom: none;
-    margin-top: -20px;
+article, aside, details, figcaption, figure,
+footer, header, hgroup, nav, section, audio, canvas, video {
+    display: block;
+}
+input, textarea, button, select {
+    margin: 0;
+    font-size: 100%;
+    line-height: normal;
+    vertical-align: baseline;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+textarea {
+    overflow: auto;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
-#banner h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-}
-
-.hero-unit {
+figure {
     position: relative;
-    padding: 30px 15px;
-    color: #F5F5F5;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #4393B9;
+}
+figure img, figure object, figure embed, figure video {
+    width: 100%;
+    display: block;
+}
+img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
 }
 
-.footer {
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 70px;
-    border-top: 1px solid #E5E5E5;
+   
+
+
+ //.animation
+@keyframes easeInRight {
+    0% {
+        opacity: 0;
+        
+        transform: translate3d(6.25rem, -50%, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(4.5rem, -50%, 0);
+        
+    }
 }
+@keyframes fadeInOutPop {
+    0% {
+        opacity: 0.66;
+    }
+    15% {
+        opacity: 0.66;
+    }
+    100% {
+        opacity: 0;
+        
+    }
+}
+@keyframes fadeOutHalf {
+    0% {
+        opacity: 0.9;  
+    }
+    100% {
+        opacity: 0.3;
+        
+    }
+}
+.fadeOut {
+    animation-name: fadeInOutPop;
+    animation-duration: 1.25s;
+    animation-timing-function:  ease-in-out;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode:forwards;
+}
+//.animation
+//.wallpaper
+vis-networks {
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    &.home-vis{
+        animation-name: fadeOutHalf;
+        animation-duration: 1s;
+        animation-delay: 7s;
+        animation-timing-function:  linear;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode:forwards;
+    }
+    
+}
+
+
+//.wallpaper 
+//.logo-wall
+.logo-wall-extend {
+    position: fixed;
+    top:50%;
+    margin-top: -41px;
+    height: 100%;
+    width: 100%;
+    left:0;
+    pointer-events: none;
+    opacity:0;
+    animation-name: fadeInOutPop;
+    animation-duration: 1.25s;
+    animation-timing-function:  ease-in-out;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+}
+#akqawall.logo-wall {
+    @extend .logo-wall-extend; 
+    animation-delay: 1.5s;
+}
+
+#leviswall.logo-wall {
+    @extend .logo-wall-extend;
+    animation-delay: 5s;
+    
+}
+
+//.logo-wall
+//.typography
+$base-black: rgba(0,0,0,0.99);
+$off-black: rgba(87,97,87,0.99);
+.base-frame {
+    padding: 4.5rem;
+
+}
+
+    
+   
+.pre-line {
+    white-space:pre-line;
+    max-width: 50%;
+    z-index: 999;
+}
+
+hgroup {
+    @extend .pre-line;
+    &.default-vis {
+        opacity:0;
+        animation-name: easeInRight;
+        animation-duration: 0.35s;
+        animation-timing-function: ease-in;
+        animation-delay: 2.5s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode:forwards;
+    }
+    &.home-vis{
+        opacity:0;
+        animation-name: easeInRight;
+        animation-duration: 0.35s;
+        animation-timing-function: ease-in;
+        animation-delay: 8s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode:forwards;
+    }    
+}
+h1 {
+    font-weight: 300;
+    color: $base-black;
+    font-size: 3.75rem;
+    display: inline;
+    z-index: 100;
+    white-space: pre-line;
+}
+
+h2 {
+    font-weight: 300;
+    color: $off-black;
+    font-size: 1.0625rem;
+    width: 75%;
+    z-index: 100;
+}
+
+a.btn-primary {
+    text-transform: capitalize;
+    font-size: 0.875rem;
+    color: $base-black;
+    padding: 0.25rem 1rem;
+    border: 1px solid $base-black;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 2.25rem;
+    z-index: 100;
+
+}
+
+   
+//.typography
+
+//.helpers
+.fill {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.parent-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.child-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.pointerEvent {
+    pointer-events: none !important;
+    overflow: hidden;
+    touch-action: none;
+    top:-100%;
+}
+.showMore {
+    top: -100%;
+}
+//.helpers

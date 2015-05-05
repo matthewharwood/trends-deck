@@ -10,9 +10,11 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/vis/dist/vis.min.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -27,8 +29,9 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ui-view=""></div>
-
+    <div id="world-stats" ui-sref="global"></div>
+    <div id="page-container" class="fill" ui-view="" ng-class="{'pointerEvent' : $state.includes('principle.detail.trend')}"></div>
+    <div ui-view="more" ng-class="{'showMore' : $state.includes('principle.detail.trend')}"></div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -54,7 +57,9 @@
       <script src="bower_components/lodash/lodash.js"></script>
       <script src="bower_components/angular-socket-io/socket.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/vis/dist/vis.min.js"></script>
       <!-- endbower -->
+      <script src="bower_components/angular-visjs/angular-vis.js"></script>
       <script src="socket.io-client/socket.io.js"></script>
     <!-- endbuild -->
   
@@ -67,10 +72,16 @@
           <script src="app/account/signup/signup.controller.js"></script>
           <script src="app/admin/admin.controller.js"></script>
           <script src="app/admin/admin.js"></script>
+          <script src="app/global/global.controller.js"></script>
+          <script src="app/global/global.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
           <script src="app/principle/principle.controller.js"></script>
+          <script src="app/principle/principle.detail.controller.js"></script>
+          <script src="app/principle/principle.detail.trend.controller.js"></script>
           <script src="app/principle/principle.js"></script>
+          <script src="app/scenes/scenes.service.js"></script>
+          <script src="app/visNetworks/visNetworks.directive.js"></script>
           <script src="components/auth/auth.service.js"></script>
           <script src="components/auth/user.service.js"></script>
           <script src="components/mongoose-error/mongoose-error.directive.js"></script>

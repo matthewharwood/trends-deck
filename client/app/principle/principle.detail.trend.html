@@ -1,0 +1,17 @@
+
+<div class="container-fixed">
+  <header>
+      <h1>{{scenes[$state.params.slug].trends[currentSlug].label}}</h1>
+      <h2>{{scenes[$state.params.slug].trends[currentSlug].desc}}</h2>
+  </header>
+  <section>
+    <ul class="blog-row">
+      <li class="col-4 unstyled-list" ng-repeat="item in scenes[$state.params.slug].trends[currentSlug].examples">
+        <div class="icon-space"></div>
+        <h3>{{item.label}}</h3>
+        <p>{{item.desc}}</p>
+      </li>
+    </ul>
+  </section>
+</div>
+

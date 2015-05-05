@@ -5,22 +5,47 @@ angular.module('trendsDeckApp')
     $stateProvider
       .state('principle', {
         url: '/principle',
-        templateUrl: 'app/principle/principle.html',
-        controller: 'PrincipleCtrl'
+        views: {
+          '': {
+            templateUrl: 'app/principle/principle.html',
+            controller: 'PrincipleCtrl',
+          },
+          'graph@principle': {
+            templateUrl: 'app/principle/principle.graph.html',
+            controller: 'PrincipleCtrl',
+          },
+          'info@principle': {
+            templateUrl: 'app/principle/principle.info.html'
+          }
+
+        }
+        
+       
       })
       .state('principle.detail', {
         url: '/{slug}',
-        templateUrl: 'app/principle/principle.detail.html',
-        controller: 'PrincipleCtrl',
-        
+        views: {
+          "info@principle" : {
+            templateUrl: 'app/principle/principle.detail.html',
+            controller: 'PrincipleDetailCtrl'
+          },
+          'graph@principle': {
+            templateUrl: 'app/principle/principle.graph.html',
+            controller: 'PrincipleDetailCtrl'
+          },
+        }
       })
       .state('principle.detail.more', {
         url: '/more', 
       })
       .state('principle.detail.trend', {
         url: '/{trendSlug}',
-        templateUrl: 'app/principle/principle.detail.html',
-        controller: 'PrincipleCtrl'
+        views: {
+          'more@': {
+            controller: 'PrincipleDetailTrendCtrl',
+            templateUrl: 'app/principle/principle.detail.trend.html',
+          }
+        }
       })
       .state('principle.detail.trend.more', {
         url: '/more'        
