@@ -29,6 +29,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <div id="world-stats" ui-sref="global"></div>
     <div id="page-container" class="fill" ui-view="" ng-class="{'pointerEvent' : $state.includes('principle.detail.trend')}"></div>
     <div ui-view="more" ng-class="{'showMore' : $state.includes('principle.detail.trend')}"></div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -71,6 +72,8 @@
           <script src="app/account/signup/signup.controller.js"></script>
           <script src="app/admin/admin.controller.js"></script>
           <script src="app/admin/admin.js"></script>
+          <script src="app/global/global.controller.js"></script>
+          <script src="app/global/global.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
           <script src="app/principle/principle.controller.js"></script>
