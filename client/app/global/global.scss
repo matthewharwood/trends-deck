@@ -13,7 +13,7 @@ $static-size: 2.75rem;
     width: 100%;
     height: $static-size;
   }
-  
+
   &:after {
     content: "TREND REPORT";
     font-size: 10px;
@@ -54,8 +54,8 @@ $static-size: 2.75rem;
   width: 20%;
   float: left;
   padding: 1rem;
-
 }
+
 //typography
 .global-title {
   display: block;
@@ -65,7 +65,7 @@ $static-size: 2.75rem;
 .global-header{
   text-transform: uppercase;
   font-weight: 600;
-  
+
 }
 .global-stat{
   font-weight: 700;
@@ -101,7 +101,7 @@ $static-size: 2.75rem;
   &:last-child{
     margin-top: 1px;
   }
- 
+
 }
 .cc-left{
   background: #000 url('../assets/images/prev-slide-arrow.png') no-repeat center center;
@@ -117,3 +117,34 @@ $static-size: 2.75rem;
     background-color: #333;
   }
 }
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+  .c5-sm {
+    width: 33.3%;
+  }
+}
+
+// Smartphones
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .container-global {
+    padding: 7rem 2.25rem;
+  }
+
+  #back-button {
+    left: 3rem;
+  }
+
+  .c5-sm {
+    width: 100%;
+  }
+
+  .c3-sm {
+    width: 100%;
+  }
+
+  .c2-sm {
+    width: 100%;
+  }
+}
+
