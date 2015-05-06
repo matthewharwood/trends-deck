@@ -29,7 +29,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div id="world-stats" ui-sref="global"></div>
+    <div id="world-stats" ng-if="!$state.is('global')" ui-sref="global"></div>
     <div id="page-container" class="fill" ui-view="" ng-class="{'pointerEvent' : $state.includes('principle.detail.trend')}"></div>
     <div ui-view="more" ng-class="{'showMore' : $state.includes('principle.detail.trend')}"></div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -60,6 +60,7 @@
       <script src="bower_components/vis/dist/vis.min.js"></script>
       <!-- endbower -->
       <script src="bower_components/angular-visjs/angular-vis.js"></script>
+      <script src="bower_components/ui-router-extras/release/ct-ui-router-extras.min.js"></script>
       <script src="socket.io-client/socket.io.js"></script>
     <!-- endbuild -->
   
@@ -84,6 +85,8 @@
           <script src="app/visNetworks/visNetworks.directive.js"></script>
           <script src="components/auth/auth.service.js"></script>
           <script src="components/auth/user.service.js"></script>
+          <script src="components/countTo/countTo.directive.js"></script>
+          <script src="components/history/history.directive.js"></script>
           <script src="components/mongoose-error/mongoose-error.directive.js"></script>
           <script src="components/navbar/navbar.controller.js"></script>
           <script src="components/socket/socket.service.js"></script>

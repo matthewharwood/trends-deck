@@ -1,3 +1,57 @@
-<div class="col-md-12">
-This is the global view.
+
+<div id="back-button"  ng-click="goBack()"></div>
+<div class="container-global" ng-if="currentPage === 0">
+	<h1 class="global-title">Digital: Overview</h1>
+	<div ng-repeat="(keyOverV, valOverV) in globalState.digital.overview" class="c2-sm">
+		<h2 class="global-header">{{valOverV.title}}</h2>
+		<span  class="global-stat" value="{{valOverV.start}}" count-to="{{valOverV.end}}" duration=".35"></span><span class="global-stat-suffix">{{valOverV.suffix}}</span>
+		<br>
+		<h2 ng-repeat="(keyDetail, valDetail) in globalState.digital.overview[keyOverV]" class="global-header">{{valDetail.title}}</h2>
+		<span  class="global-stat" value="{{globalState.digital.overview[keyOverV].details.start}}" count-to="{{globalState.digital.overview[keyOverV].details.end}}" duration=".35"></span><span class="global-stat-suffix">{{globalState.digital.overview[keyOverV].details.suffix}}</span>
+	</div>
 </div>
+<div class="container-global" ng-if="currentPage === 1">
+	<h1 class="global-title">Digital: Share of web traffic by device</h1>
+	<div ng-repeat="(keyOverV, valOverV) in globalState.digital.traffic" class="c3-sm">
+		<h2 class="global-header">{{valOverV.title}}</h2>
+		<span  class="global-stat" value="{{valOverV.start}}" count-to="{{valOverV.end}}" duration=".35"></span><span class="global-stat-suffix">{{valOverV.suffix}}</span>
+		<br>
+		<h2 ng-repeat="(keyDetail, valDetail) in globalState.digital.overview[keyOverV]" class="global-header">{{valDetail.title}}</h2>
+		<span  class="global-stat" value="{{globalState.digital.overview[keyOverV].details.start}}" count-to="{{globalState.digital.overview[keyOverV].details.end}}" duration=".35"></span><span class="global-stat-suffix">{{globalState.digital.overview[keyOverV].details.suffix}}</span>
+	</div>
+</div>
+<div class="container-global" ng-if="currentPage === 2">
+	<h1 class="global-title">Social: most active social media accounts by region</h1>
+	<div ng-repeat="(keyOverV, valOverV) in globalState.social.region" class="c5-sm">
+		<h2 class="global-header">{{valOverV.title}}</h2>
+		<span  class="global-stat" value="{{valOverV.start}}" count-to="{{valOverV.end}}" duration=".35"></span><span class="global-stat-suffix">{{valOverV.suffix}}</span>
+		<br>
+		<h2 ng-repeat="(keyDetail, valDetail) in globalState.social.region[keyOverV]" class="global-header">{{valDetail.title}}</h2>
+		<span  class="global-stat" value="{{globalState.social.region[keyOverV].details.start}}" count-to="{{globalState.social.region[keyOverV].details.end}}" duration=".35"></span><span class="global-stat-suffix">{{globalState.digital.overview[keyOverV].details.suffix}}</span>
+	</div>
+</div>
+<div class="container-global" ng-if="currentPage === 3">
+	<h1 class="global-title">Social: global social platform ranking by active monthly users</h1>
+	<div ng-repeat="(keyOverV, valOverV) in globalState.social.platform" class="c5-sm">
+		<h2 class="global-header">{{valOverV.title}}</h2>
+		<span  class="global-stat" value="{{valOverV.start}}" count-to="{{valOverV.end}}" duration=".35"></span><span class="global-stat-suffix">{{valOverV.suffix}}</span>
+	</div>
+</div>
+<div class="container-global" ng-if="currentPage === 4">
+	<h1 class="global-title">Mobile: commerce leaders by country</h1>
+	<div ng-repeat="(keyOverV, valOverV) in globalState.ecomm.mobile" class="c5-sm">
+		<h2 class="global-header">{{valOverV.title}}</h2>
+		<span  class="global-stat" value="{{valOverV.start}}" count-to="{{valOverV.end}}" duration=".35"></span><span class="global-stat-suffix">{{valOverV.suffix}}</span>
+	</div>
+</div>
+<div class="container-global" ng-if="currentPage === 5">
+	<h1 class="global-title">E-commerce: top desktop purchasers for the month of march 2015</h1>
+	<div ng-repeat="(keyOverV, valOverV) in globalState.ecomm.desktop" class="c5-sm">
+		<h2 class="global-header">{{valOverV.title}}</h2>
+		<span  class="global-stat" value="{{valOverV.start}}" count-to="{{valOverV.end}}" duration=".35"></span><span class="global-stat-suffix">{{valOverV.suffix}}</span>
+	</div>
+</div>
+<ul class="carousel-controls">
+	<li class="carousel-btn cc-left" ng-click="pagenateGlobal(-1)"></li>
+	<li class="carousel-btn cc-right" ng-click="pagenateGlobal(1)"></li>
+</ul>

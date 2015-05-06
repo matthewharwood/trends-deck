@@ -6,7 +6,8 @@ angular.module('trendsDeckApp', [
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
-  'ngVis'
+  'ngVis',
+  'ct.ui.router.extras'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

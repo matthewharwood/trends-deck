@@ -1,0 +1,119 @@
+$static-size: 2.75rem;
+#back-button{
+  position: fixed;
+  top: $static-size;
+  left: 4.5rem;
+  width: $static-size;
+  height: $static-size;
+  cursor: pointer;
+  z-index: 999999;
+  background: url("../assets/images/back-btn.png") center center;
+  background-size: cover;
+  img {
+    width: 100%;
+    height: $static-size;
+  }
+  
+  &:after {
+    content: "TREND REPORT";
+    font-size: 10px;
+    color: #000;
+    font-weight: 700;
+    position: absolute;
+    bottom: 13px;
+    text-align: left;
+    left: 52px;
+    line-height: .95;
+  }
+  &:hover{
+    background: url("../assets/images/back-btn-blue.png") center center;
+    background-size: cover;
+    &:after{
+      color: blue;
+    }
+  }
+}
+.container-global {
+  height: 100%;
+  padding: 9rem 4.5rem;
+}
+.c2-sm {
+  width: 50%;
+  float: left;
+  padding: 1rem;
+}
+.c3-sm {
+  width: 33.33333%;
+  float: left;
+  padding: 1rem;
+  &:last-child {
+    width: 33.2%;
+  }
+}
+.c5-sm {
+  width: 20%;
+  float: left;
+  padding: 1rem;
+
+}
+//typography
+.global-title {
+  display: block;
+  left: 12px;
+  margin-bottom: 2.75rem;
+}
+.global-header{
+  text-transform: uppercase;
+  font-weight: 600;
+  
+}
+.global-stat{
+  font-weight: 700;
+  font-size: 42px;
+  left: -3px;
+}
+.global-stat-suffix{
+  text-transform: uppercase;
+  @extend .global-stat;
+  left: 12px;
+}
+
+//controlls
+
+.carousel-controls{
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 144px;
+  width: 72px;
+  list-style: none;
+}
+.carousel-btn {
+  height: 72px;
+  width: 72px;
+  list-style: none;
+  background: #000;
+  color: #fff;
+  margin: 0 auto;
+  text-align: center;
+  cursor: pointer;
+  &:last-child{
+    margin-top: 1px;
+  }
+ 
+}
+.cc-left{
+  background: #000 url('../assets/images/prev-slide-arrow.png') no-repeat center center;
+  background-size: 50% 50%;
+   &:hover {
+    background-color: #333;
+  }
+}
+.cc-right{
+  background: #000 url('../assets/images/next-slide-arrow.png') no-repeat center center;
+  background-size: 50% 50%;
+  &:hover {
+    background-color: #333;
+  }
+}

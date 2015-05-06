@@ -46,3 +46,41 @@
     list-style-type: none;
   }
 }
+
+$static-size: 2.75rem;
+$static-offset: 4.5rem;
+#history-button{
+  display: block;
+  position: fixed;
+  top: $static-size;
+  left: $static-offset;
+  width: $static-size;
+  height: $static-size;
+  cursor: pointer;
+  z-index: 999999;
+  background: url("../assets/images/back-btn.png") center center;
+  background-size: cover;
+  img {
+    width: 100%;
+    height: $static-size;
+  }
+  
+//  &:after {
+//    content: "";
+//    font-size: 10px;
+//    color: #000;
+//    font-weight: 700;
+//    position: absolute;
+//    bottom: 13px;
+//    text-align: left;
+//    left: 52px;
+//    line-height: .95;
+//  }
+  &:hover{
+    background: url("../assets/images/back-btn-blue.png") center center;
+    background-size: cover;
+    &:after{
+      color: blue;
+    }
+  }
+}
